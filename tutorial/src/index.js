@@ -1,9 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-function Greeting() {
-  return <h4>this is david and this is my first component</h4>;
+import "./index.css";
+
+function BookList() {
+  return (
+    <section className="booklist">
+      <Book />
+    </section>
+  );
 }
 
+const author = 'Ham and Rye';
+const Book = () => {
+  const title = 'Charles Bukowski';
+  return (
+    <article className="book">
+      <img
+        src="https://images-na.ssl-images-amazon.com/images/I/91PY8Upu8oL._AC_UL254_SR254,254_.jpg"
+        alt="a book"
+      />
+      <h1>{title}</h1>
+      <h4>{author.toUpperCase()}</h4>
+    </article>
+  );
+};
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Greeting />);
+root.render(<BookList />);
